@@ -6,13 +6,13 @@ A comprehensive multi-agent AI system for Work Breakdown Structure (WBS) managem
 
 ```mermaid
 graph TB
-    A[User Interface] --> B[KarmaTech SAAS Agents]
+    A[User Interface] --> B[AgentFlow SAAS Agents]
     B --> C[Host Agent :8000]
     B --> D[Requirements Agent :8002]
     B --> E[PM Agent :8004]
     B --> F[HR Agent :8003]
     
-    G[Karma SAAS MCP] --> H[MCP Server :8000]
+    G[AgentFlow SAAS MCP] --> H[MCP Server :8000]
     H --> I[Task Management]
     H --> J[Employee Management]
     H --> K[Role Management]
@@ -31,14 +31,14 @@ graph TB
 
 ```
 Agentic-AI-System/
-├── KarmaTech_SAAS_Agents/          # Multi-Agent System
+├── AgentFlow_SAAS_Agents/          # Multi-Agent System
 │   ├── adk_host_agent/             # Host orchestration agent
 │   ├── requirment_agent/           # WBS requirements generation
 │   ├── pm_agent/                   # Project management agent
 │   ├── hr_agent/                   # Human resource management
 │   ├── webhook_server.py           # Airtable integration
 │   └── requirements.txt            # Python dependencies
-├── Karma_SAAS_MCP/                 # MCP Server System
+├── AgentFlow_SAAS_MCP/             # MCP Server System
 │   ├── controllers/                # MCP tool controllers
 │   ├── services/                   # Business logic layer
 │   ├── models/                     # Data validation models
@@ -63,10 +63,10 @@ git clone https://github.com/iamadityavarma/Agentic-AI-System.git
 cd Agentic-AI-System
 ```
 
-### 2. Setup KarmaTech SAAS Agents
+### 2. Setup AgentFlow SAAS Agents
 
 ```bash
-cd KarmaTech_SAAS_Agents
+cd AgentFlow_SAAS_Agents
 
 # Install dependencies
 pip install -r requirements.txt
@@ -82,10 +82,10 @@ python run_hr_agent.py              # Port 8003
 python run_client_host_agent.py     # Port 8000
 ```
 
-### 3. Setup Karma SAAS MCP Server
+### 3. Setup AgentFlow SAAS MCP Server
 
 ```bash
-cd ../Karma_SAAS_MCP
+cd ../AgentFlow_SAAS_MCP
 
 # Install dependencies
 pip install -r requirements.txt
@@ -104,7 +104,7 @@ python mcp_server.py                # Port 8000 (SSE)
 
 ## 🎯 Core Features
 
-### 🤖 KarmaTech SAAS Agents
+### 🤖 AgentFlow SAAS Agents
 
 **Multi-Agent System with A2A Protocol Communication**
 
@@ -121,7 +121,7 @@ python mcp_server.py                # Port 8000 (SSE)
 - ✅ Real-time Project Updates
 - ✅ Comprehensive Error Handling
 
-### 🛠️ Karma SAAS MCP Server
+### 🛠️ AgentFlow SAAS MCP Server
 
 **Model Context Protocol Server with 17 MCP Tools**
 
@@ -215,7 +215,7 @@ level3 = await create_level_3_task_with_employee_lookup(
 ### Environment Variables
 
 ```bash
-# KarmaTech SAAS Agents
+# AgentFlow SAAS Agents
 GOOGLE_API_KEY=your_google_api_key_here
 GEMINI_API_KEY=your_google_api_key_here
 REQUIREMENTS_AGENT_URL=http://localhost:8002
@@ -223,7 +223,7 @@ WBS_AGENT_URL=http://localhost:8004
 HR_AGENT_URL=http://localhost:8003
 HOST_AGENT_PORT=8000
 
-# Karma SAAS MCP
+# AgentFlow SAAS MCP
 WBS_API_BASE_URL=http://117.248.109.35:5005
 ```
 
@@ -269,16 +269,16 @@ employees = await get_employees("dummy")
 
 ### Detailed Guides
 
-- **[KarmaTech_SAAS_Agents/README.md](KarmaTech_SAAS_Agents/README.md)** - Multi-agent system documentation
-- **[Karma_SAAS_MCP/README.md](Karma_SAAS_MCP/README.md)** - MCP server documentation
-- **[KarmaTech_SAAS_Agents/REQUIREMENTS_AGENT_GUIDE.md](KarmaTech_SAAS_Agents/REQUIREMENTS_AGENT_GUIDE.md)** - Requirements agent usage
-- **[KarmaTech_SAAS_Agents/WBS_ORCHESTRATION_AGENT_GUIDE.md](KarmaTech_SAAS_Agents/WBS_ORCHESTRATION_AGENT_GUIDE.md)** - WBS orchestration guide
+- **[AgentFlow_SAAS_Agents/README.md](AgentFlow_SAAS_Agents/README.md)** - Multi-agent system documentation
+- **[AgentFlow_SAAS_MCP/README.md](AgentFlow_SAAS_MCP/README.md)** - MCP server documentation
+- **[AgentFlow_SAAS_Agents/REQUIREMENTS_AGENT_GUIDE.md](AgentFlow_SAAS_Agents/REQUIREMENTS_AGENT_GUIDE.md)** - Requirements agent usage
+- **[AgentFlow_SAAS_Agents/WBS_ORCHESTRATION_AGENT_GUIDE.md](AgentFlow_SAAS_Agents/WBS_ORCHESTRATION_AGENT_GUIDE.md)** - WBS orchestration guide
 
 ### Architecture Documents
 
-- **[Karma_SAAS_MCP/WBS_MCP_SERVER_CAPABILITIES.md](Karma_SAAS_MCP/WBS_MCP_SERVER_CAPABILITIES.md)** - MCP server capabilities
-- **[Karma_SAAS_MCP/DEPLOYMENT.md](Karma_SAAS_MCP/DEPLOYMENT.md)** - Deployment instructions
-- **[Karma_SAAS_MCP/WINDOWS_DEPLOYMENT_GUIDE.md](Karma_SAAS_MCP/WINDOWS_DEPLOYMENT_GUIDE.md)** - Windows deployment
+- **[AgentFlow_SAAS_MCP/WBS_MCP_SERVER_CAPABILITIES.md](AgentFlow_SAAS_MCP/WBS_MCP_SERVER_CAPABILITIES.md)** - MCP server capabilities
+- **[AgentFlow_SAAS_MCP/DEPLOYMENT.md](AgentFlow_SAAS_MCP/DEPLOYMENT.md)** - Deployment instructions
+- **[AgentFlow_SAAS_MCP/WINDOWS_DEPLOYMENT_GUIDE.md](AgentFlow_SAAS_MCP/WINDOWS_DEPLOYMENT_GUIDE.md)** - Windows deployment
 
 ## 🚀 Production Deployment
 
@@ -287,12 +287,12 @@ employees = await get_employees("dummy")
 Both systems include Docker configurations:
 
 ```bash
-# KarmaTech SAAS Agents
-cd KarmaTech_SAAS_Agents
+# AgentFlow SAAS Agents
+cd AgentFlow_SAAS_Agents
 docker-compose up -d
 
-# Karma SAAS MCP
-cd Karma_SAAS_MCP
+# AgentFlow SAAS MCP
+cd AgentFlow_SAAS_MCP
 docker-compose up -d
 ```
 
@@ -345,8 +345,8 @@ This project is licensed under the MIT License - see individual component licens
 
 | Component | Status | Version | Last Updated |
 |-----------|--------|---------|--------------|
-| KarmaTech SAAS Agents | ✅ Production Ready | v2.0 | 2025-01-18 |
-| Karma SAAS MCP Server | ✅ Production Ready | v1.0 | 2025-01-18 |
+| AgentFlow SAAS Agents | ✅ Production Ready | v2.0 | 2025-01-18 |
+| AgentFlow SAAS MCP Server | ✅ Production Ready | v1.0 | 2025-01-18 |
 | A2A Protocol | ✅ Working | Latest | 2025-01-18 |
 | MCP Integration | ✅ Working | 17 Tools | 2025-01-18 |
 | API Integration | ✅ Connected | Live | 2025-01-18 |
